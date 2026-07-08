@@ -32,6 +32,10 @@ public class LoanController {
                 .subscribeOn(Schedulers.boundedElastic());
     }
 
+    // X-Member-Id simulates the logged-in user, per the assignment's allowance.
+    // Given more time, I'd replace this with real authentication (e.g. a JWT
+    // validated by a filter/gateway, with the member ID extracted from its claims
+    // instead of trusted from a client-supplied header).
     @PostMapping
     public Mono<Loan> loanBook(@RequestHeader("X-Member-Id") Long memberId,
                                 @Valid @RequestBody LoanRequest request) {
