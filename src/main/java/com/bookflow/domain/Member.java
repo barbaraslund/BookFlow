@@ -3,7 +3,7 @@ package com.bookflow.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("members")
+@Table("MEMBERS")
 public class Member {
     @Id
     private Long id;
